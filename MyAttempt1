@@ -1,0 +1,246 @@
+#include <iostream>
+
+bool narcissistic(int);
+
+int main()
+{
+    bool is_narc = narcissistic(9498372);
+    if (is_narc == true)
+    {
+        std::cout << "True!";
+    }
+    else
+    {
+        std::cout <<"False";
+    }
+
+    return 0;
+}
+
+
+bool narcissistic( int value )
+{
+  int count_digits = 0;
+  int value_divisor = value;
+  
+  //determine num digits
+  while(value_divisor > 9)
+  {
+    value_divisor = value_divisor/10;
+    ++count_digits;
+    //std::cout << count_digits;
+  }
+  if(value_divisor < 10 && value_divisor >= 0)
+  {
+    ++count_digits;
+    //std::cout << count_digits;
+  }
+  std::cout << "count_digits = " << count_digits << std::endl;
+  
+  //determine value of each digit
+    if(count_digits == 7)
+  {
+    int value_dupe = value;
+    int digit_one = value_dupe/1000000;//find the thousands value
+    value_dupe = value_dupe - (digit_one * 1000000);//subtract the thousands value,
+    
+    int digit_two = value_dupe/100000; //find the hundreds value
+    value_dupe = value_dupe - (digit_two * 100000);
+    
+    int digit_three = value_dupe/10000;//find the tens value
+    value_dupe = value_dupe - (digit_three * 10000);
+    
+    int digit_four = value_dupe/1000;//find the tens value
+    value_dupe = value_dupe - (digit_four * 1000);
+    
+    int digit_5 = value_dupe/100;//find the tens value
+    value_dupe = value_dupe - (digit_5 * 100);
+    
+    int digit_6 = value_dupe/10;//find the tens value
+    value_dupe = value_dupe - (digit_6 * 10);
+    
+    int digit_7 = value_dupe;
+    
+    std::cout << "Digit one = " << digit_one << std::endl;
+    std::cout << "Digit two = " << digit_two << std::endl;
+    std::cout << "Digit three = " << digit_three << std::endl;
+    std::cout << "Digit four = " << digit_four << std::endl;
+    std::cout << "Digit five = " << digit_5 << std::endl;
+    std::cout << "Digit six = " << digit_6 << std::endl;
+    std::cout << "Digit seven = " << digit_7 << std::endl;
+    
+    if((digit_one *digit_one *digit_one *digit_one*digit_one*digit_one*digit_one) + (digit_two * digit_two* digit_two * digit_two * digit_two* digit_two* digit_two) + (digit_three* digit_three* digit_three * digit_three * digit_three * digit_three* digit_three) + (digit_four* digit_four* digit_four * digit_four * digit_four * digit_four* digit_four) + (digit_5* digit_5 * digit_5* digit_5 * digit_5* digit_5* digit_5) + (digit_6 * digit_6* digit_6* digit_6* digit_6* digit_6* digit_6) + (digit_7 * digit_7* digit_7* digit_7* digit_7* digit_7* digit_7) == value)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  }
+  
+    if(count_digits == 6)
+  {
+    int value_dupe = value;
+    int digit_one = value_dupe/100000;//find the thousands value
+    value_dupe = value_dupe - (digit_one * 100000);//subtract the thousands value,
+    
+    int digit_two = value_dupe/10000; //find the hundreds value
+    value_dupe = value_dupe - (digit_two * 10000);
+    
+    int digit_three = value_dupe/1000;//find the tens value
+    value_dupe = value_dupe - (digit_three * 1000);
+    
+    int digit_four = value_dupe/100;//find the tens value
+    value_dupe = value_dupe - (digit_four * 100);
+    
+    int digit_5 = value_dupe/10;//find the tens value
+    value_dupe = value_dupe - (digit_5 * 10);
+    
+    int digit_6 = value_dupe;
+    
+    std::cout << "Digit one = " << digit_one << std::endl;
+    std::cout << "Digit two = " << digit_two << std::endl;
+    std::cout << "Digit three = " << digit_three << std::endl;
+    std::cout << "Digit four = " << digit_four << std::endl;
+    std::cout << "Digit five = " << digit_5 << std::endl;
+    std::cout << "Digit six = " << digit_6 << std::endl;
+    
+    if((digit_one *digit_one *digit_one *digit_one*digit_one*digit_one) + (digit_two * digit_two * digit_two * digit_two* digit_two* digit_two) + (digit_three* digit_three * digit_three * digit_three * digit_three* digit_three) + (digit_four* digit_four * digit_four * digit_four * digit_four* digit_four) + (digit_5* digit_5 * digit_5 * digit_5* digit_5* digit_5) + (digit_6 * digit_6* digit_6* digit_6* digit_6* digit_6) == value)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  }
+  
+    if(count_digits == 5)
+  {
+    int value_dupe = value;
+    int digit_one = value_dupe/10000;//find the thousands value
+    value_dupe = value_dupe - (digit_one * 10000);//subtract the thousands value,
+    
+    int digit_two = value_dupe/1000; //find the hundreds value
+    value_dupe = value_dupe - (digit_two * 1000);
+    
+    int digit_three = value_dupe/100;//find the tens value
+    value_dupe = value_dupe - (digit_three * 100);
+    
+    int digit_four = value_dupe/10;//find the tens value
+    value_dupe = value_dupe - (digit_four * 10);
+    
+    int digit_5 = value_dupe;
+    
+    std::cout << "Digit one = " << digit_one << std::endl;
+    std::cout << "Digit two = " << digit_two << std::endl;
+    std::cout << "Digit three = " << digit_three << std::endl;
+    std::cout << "Digit four = " << digit_four << std::endl;
+    std::cout << "Digit five = " << digit_5 << std::endl;
+    
+    if((digit_one *digit_one *digit_one *digit_one*digit_one) + (digit_two * digit_two * digit_two * digit_two* digit_two) + (digit_three * digit_three * digit_three * digit_three* digit_three) + (digit_four * digit_four * digit_four * digit_four* digit_four) + (digit_5 * digit_5 * digit_5* digit_5* digit_5) == value)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  }
+  
+  if(count_digits == 4)
+  {
+    int value_dupe = value;
+    int digit_one = value_dupe/1000;//find the thousands value
+    value_dupe = value_dupe - (digit_one * 1000);//subtract the thousands value,
+    
+    int digit_two = value_dupe/100; //find the hundreds value
+    value_dupe = value_dupe - (digit_two * 100);
+    
+    int digit_three = value_dupe/10;//find the tens value
+    value_dupe = value_dupe - (digit_three * 10);
+    
+    int digit_four = value_dupe;//find the ones value
+    
+    std::cout << "Digit one = " << digit_one << std::endl;
+    std::cout << "Digit two = " << digit_two << std::endl;
+    std::cout << "Digit three = " << digit_three << std::endl;
+    std::cout << "Digit four = " << digit_four << std::endl;
+    
+    if((digit_one *digit_one *digit_one *digit_one) + (digit_two * digit_two * digit_two * digit_two) + (digit_three * digit_three * digit_three * digit_three) + (digit_four * digit_four * digit_four * digit_four) == value)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  }
+  else if(count_digits == 3)
+  {
+    int value_dupe = value;
+    
+    int digit_two = value_dupe/100; //find the hundreds value
+    value_dupe = value_dupe - (digit_two * 100);
+    
+    int digit_three = value_dupe/10;//find the tens value
+    value_dupe = value_dupe - (digit_three * 10);
+    
+    int digit_four = value_dupe;//find the ones value
+    
+    std::cout << "Digit two = " << digit_two << std::endl;
+    std::cout << "Digit three = " << digit_three << std::endl;
+    std::cout << "Digit four = " << digit_four << std::endl;
+    
+    if((digit_two * digit_two * digit_two) + (digit_three * digit_three * digit_three) + (digit_four * digit_four * digit_four) == value)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  }
+  else if(count_digits == 2)
+  {
+    int value_dupe = value;
+
+    int digit_three = value_dupe/10;//find the tens value
+    value_dupe = value_dupe - (digit_three * 10);
+    
+    int digit_four = value_dupe;//find the ones value
+    
+    std::cout << "Digit three = " << digit_three << std::endl;
+    std::cout << "Digit four = " << digit_four << std::endl;
+    
+    if((digit_three * digit_three) + (digit_four * digit_four) == value)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  }
+  else if(count_digits == 1)
+  {
+    int digit_four = value;
+    
+    std::cout << "Only digit = " << digit_four << std::endl;
+    
+    if(digit_four == value)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+  }
+  else
+  {
+      std::cout << "No digits or negative number!" << std::endl;
+      return false;
+  }
+}
